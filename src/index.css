@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.presentacion {
+  background-color: #f3f4f6;
+  padding: 2rem;
+}
