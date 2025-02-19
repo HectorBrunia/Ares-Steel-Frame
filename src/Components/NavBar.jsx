@@ -1,10 +1,14 @@
-export const NavBar = () => {
+const NavBar = () => {
   return (
     <header>
       <nav className="bg-red-600 text-white felx-col p-4 flex gap-52 items-center">
         <div>
           <a href="/">
-            <h1 className="text-3xl">Ares Steel Frame</h1>
+            <img
+              className="w-20 h-20 ml-8 rounded-full"
+              src="/logo.jpeg"
+              alt=""
+            />
           </a>
         </div>
         <ul className="flex-col w-[50%] md:flex-row flex justify-between items-center">
@@ -25,3 +29,5 @@ export const NavBar = () => {
     </header>
   );
 };
+
+export default NavBar;
