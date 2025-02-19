@@ -20,7 +20,7 @@ function App() {
         <section
           className="h-[80vh] w-full bg-gray-200 overflow-y-scroll "
           style={{
-            backgroundImage: `/fonde-servicos.jpeg)`,
+            backgroundImage: `/fonde-servicos.jpeg`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
