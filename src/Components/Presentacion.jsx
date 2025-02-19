@@ -16,7 +16,7 @@ const Presentacion = () => {
     <div
       className="w-full h-[80vh] flex text-white flex-col items-center justify-center"
       style={{
-        backgroundImage: `url(../../public${images[currentImage]})`,
+        backgroundImage: `url(${images[currentImage]})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         transition: "background-image 1.5s ease-in-out",
