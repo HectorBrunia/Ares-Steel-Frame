@@ -26,7 +26,7 @@ const Nosotros = () => {
   }, [videoIndex]);
 
   return (
-    <section className="my-16 mx-auto w-full">
+    <section className="my-16 bg-white z-10 mx-auto w-full">
       <h1 className="mx-auto w-fit text-4xl font-bold mb-6">
         Por Qué Elegirnos
       </h1>
@@ -115,7 +115,7 @@ const Nosotros = () => {
         <div>
           <video
             ref={videoRef}
-            className="h-[80vh] shadow-2xl rounded-lg"
+            className="h-[80vh] w-[430px] shadow-2xl rounded-lg"
             autoPlay
             loop
             muted

@@ -1,30 +1,79 @@
+import { Link } from "react-scroll";
+import { ImInstagram } from "react-icons/im";
 const NavBar = () => {
   return (
     <header>
-      <nav className="bg-red-600 text-white felx-col p-4 flex gap-52 items-center">
+      <nav className="bg-red-600 fixed z-10 w-full text-white felx-col px-50 py-2 flex justify-between items-center">
         <div>
-          <a href="/">
-            <img
-              className="w-20 h-20 ml-8 rounded-full"
-              src="/logo.jpeg"
-              alt=""
-            />
-          </a>
+          <img
+            className="w-20 h-20 ml-8 rounded-full grow"
+            src="/logo.jpeg"
+            alt=""
+          />
         </div>
-        <ul className="flex-col w-[50%] md:flex-row flex justify-between items-center">
+        <ul className="flex gap-40">
           <li>
-            <a href="/">Sobre Nosotros</a>
+            <Link
+              to="nosotros"
+              smooth={true}
+              duration={500}
+              spy={true}
+              style={{ transition: "all 1s ease-in-out" }}
+              activeClass="text-lg font-bold"
+              className="cursor-pointer"
+            >
+              Sobre Nosotros
+            </Link>
           </li>
           <li>
-            <a href="/about">Nuestros servicios</a>
+            <Link
+              to="servicios"
+              smooth={true}
+              duration={500}
+              style={{ transition: "all 1s ease-in-out" }}
+              spy={true}
+              activeClass="text-lg font-bold"
+              className="cursor-pointer"
+            >
+              Nuestros Servicios
+            </Link>
           </li>
           <li>
-            <a href="/about">Proyectos</a>
+            <Link
+              to="proyectos"
+              smooth={true}
+              duration={500}
+              style={{ transition: "all 1s ease-in-out" }}
+              spy={true}
+              activeClass="text-lg font-bold "
+              className="cursor-pointer"
+            >
+              Proyectos
+            </Link>
           </li>
           <li>
-            <a href="/contact">Contactanos</a>
+            <Link
+              to="contacto"
+              smooth={true}
+              duration={500}
+              style={{ transition: "all 1s ease-in-out" }}
+              spy={true}
+              activeClass="text-lg font-bold"
+              className="cursor-pointer"
+            >
+              Contáctanos
+            </Link>
           </li>
         </ul>
+        <div>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/ares.steelframe?igsh=ZG1mODRrNGdqeHNs"
+            className="flex rounded-"
+          >
+            <ImInstagram size={40} />
+          </a>
+        </div>
       </nav>
     </header>
   );

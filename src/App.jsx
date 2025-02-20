@@ -5,29 +5,28 @@ import Presentacion from "./Components/Presentacion";
 import Servicios from "./Components/Servicio";
 
 import "leaflet/dist/leaflet.css";
+import { ParallaxProvider } from "react-scroll-parallax";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <>
       <NavBar />
       <div className="felx-col items-center justify-center">
-        <section>
+        <section id="nosotros">
           <Presentacion />
-        </section>
-        <section>
+
           <Nosotros />
         </section>
-        <section
-          className="h-[80vh] w-full bg-gray-200 overflow-y-scroll "
-          style={{
-            backgroundImage: `url(/fonde-servicos.jpeg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
+
+        <ParallaxProvider>
           <Servicios />
+        </ParallaxProvider>
+
+        <section id="contacto">
+          <Contacto />
         </section>
-        <Contacto />
+        <Footer />
       </div>
     </>
   );
