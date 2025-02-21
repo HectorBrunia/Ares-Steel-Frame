@@ -44,7 +44,7 @@ const Servicios = () => {
     <section id="servicios" className="relative -z-0 h-[300vh] overflow-hidden">
       <Parallax speed={-300}>
         <div
-          className="h-[150vh] absolute -z-10 w-full top-[-317px] bg-cover bg-center bg-no-repeat"
+          className="h-[150vh] absolute -z-10 w-full top-[-320px] bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(/fonde-servicos.jpeg)`,
             backgroundSize: "cover",
@@ -53,7 +53,7 @@ const Servicios = () => {
         ></div>
       </Parallax>
       <Parallax speed={30}>
-        <div className="mx-auto backdrop-blur-xs absolute top-160 z-10 w-full">
+        <div className="mx-auto backdrop-blur-sm h-[300vh] pt-60 absolute top-60 z-10 w-full">
           <h2 className="mx-auto text-4xl w-fit font-bold text-center  mb-12">
             Nuestros Servicios
           </h2>
@@ -79,7 +79,7 @@ const Servicios = () => {
                     {service.title}
                   </h3>
                   <div className="bg-red-500 my-6 w-[500px] mx-auto h-[2px]"></div>
-                  <p className="text-gray-600  text-center mt-2">
+                  <p className="text-gray-800  text-center mt-2">
                     {service.description}
                   </p>
                 </div>

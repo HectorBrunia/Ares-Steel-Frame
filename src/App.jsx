@@ -3,6 +3,7 @@ import Contacto from "./Components/Contacto";
 import Nosotros from "./Components/Nosotros";
 import Presentacion from "./Components/Presentacion";
 import Servicios from "./Components/Servicio";
+import SestemasConstructivos from "./Components/SistemasConstructivos";
 
 import "leaflet/dist/leaflet.css";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -22,6 +23,8 @@ function App() {
         <ParallaxProvider>
           <Servicios />
         </ParallaxProvider>
+
+        <SestemasConstructivos />
 
         <section id="contacto">
           <Contacto />

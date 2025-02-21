@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { FaArrowDown } from "react-icons/fa";
+import { motion } from "framer-motion";
 const images = ["/img-hero.jpeg", "/img-hero2.jpeg", "/img-hero3.jpeg"];
 const Presentacion = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -14,7 +16,7 @@ const Presentacion = () => {
 
   return (
     <div
-      className="w-full h-[80vh] flex text-white flex-col items-center justify-center"
+      className="w-full h-[90vh] flex text-white flex-col items-center justify-center"
       style={{
         backgroundImage: `url(${images[currentImage]})`,
         backgroundSize: "cover",
@@ -22,7 +24,7 @@ const Presentacion = () => {
         transition: "background-image 1.5s ease-in-out",
       }}
     >
-      <div className="py-20 w-full h-[80vh] backdrop-blur-xs gap-10 flex flex-col items-center justify-center">
+      <div className="py-20 w-full h-[90vh] backdrop-blur-sm gap-10 flex flex-col items-center justify-center">
         <h1 className="text-5xl font-bold">Ares Steel Frame</h1>
         <p className="text-3xl font-medium text-red-500">
           Construcción Moderna, Eficiente y Confiable
@@ -39,6 +41,19 @@ const Presentacion = () => {
           , brindando soluciones modernas y personalizadas en toda Argentina.
         </p>
       </div>
+      <motion.div
+        className="absolute bottom-14 w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center gap-4"
+        initial={{ translateY: -10 }}
+        animate={{ translateY: 0 }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "reverse",
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+      >
+        <FaArrowDown size={30} color="white" />
+      </motion.div>
     </div>
   );
 };

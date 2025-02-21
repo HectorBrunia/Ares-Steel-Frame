@@ -1,10 +1,11 @@
 import { useEffect, useState, useRef } from "react";
-
+import { motion } from "framer-motion";
 const vid = [
   "/ejemplo-vid.mp4",
   "/ejemplo-vid2.mp4",
-  "/ejemplo-vid3.mp4",
   "/ejemplo-vid4.mp4",
+  "/ejemplo-vid5.mp4",
+  "/ejemplo-vid3.mp4",
 ];
 
 const Nosotros = () => {
@@ -26,12 +27,18 @@ const Nosotros = () => {
   }, [videoIndex]);
 
   return (
-    <section className="my-16 bg-white z-10 mx-auto w-full">
+    <motion.section
+      className="my-36 bg-white z-10 mx-auto w-full"
+      initial={{ opacity: 0, translateY: -2 }} // Inicialmente invisible y más abajo
+      whileInView={{ opacity: 1, translateY: 0 }} // Se hace visible al entrar en pantalla
+      viewport={{ once: true, amount: 0.3 }} // Se activa cuando el 30% del elemento es visible
+      transition={{ duration: 1.5, ease: "easeOut" }} // Duración
+    >
       <h1 className="mx-auto w-fit text-4xl font-bold mb-6">
         Por Qué Elegirnos
       </h1>
       <div className="mx-auto flex flex-row gap-2 max-w-7xl items-center justify-baseline">
-        <div className="mx-auto flex flex-col gap-24 w-[400px] items-center justify-center">
+        <div className="mx-auto flex flex-col gap-16 w-[400px] items-center justify-center">
           <div
             className={`transition-all duration-500 ${videoIndex === 0 ? "opacity-100 scale-110" : "opacity-40 scale-90"}`}
           >
@@ -125,7 +132,7 @@ const Nosotros = () => {
           </video>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
