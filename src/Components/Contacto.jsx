@@ -6,18 +6,18 @@ const Contacto = () => {
       <h1 className=" text-4xl text-red-500 font-bold text-center my-12">
         Contacta con Nosotros
       </h1>
-      <div className="mx-auto flex flex-col md:flex-row items-center justify-center gap-4">
-        <div className="w-1/3 flex flex-col gap-10">
+      <div className="mx-auto w-full flex flex-col  md:flex-row items-center justify-center gap-4">
+        <div className="md:w-1/3 w-full p-8 flex flex-col gap-10">
           <div>
-            <h2 className="text-red-500 text-2xl font-bold">Email</h2>
+            <h2 className="text-red-500 text-xl font-bold">Email</h2>
             <p>ares.steelframe@gmail.com</p>
           </div>
           <div>
-            <h2 className="text-red-500 text-2xl font-bold">Telefono</h2>
+            <h2 className="text-red-500 text-xl font-bold">Telefono</h2>
             <p>+54 2494-496161</p>
           </div>
           <div>
-            <h2 className="text-red-500 text-2xl font-bold">Síguenos</h2>
+            <h2 className="text-red-500 text-xl font-bold">Síguenos</h2>
             <a
               href="https://www.instagram.com/ares.steelframe?igsh=ZG1mODRrNGdqeHNs"
               target="_blank"
@@ -27,15 +27,15 @@ const Contacto = () => {
               Instagram: @ares.steelframe
             </a>
           </div>
-          <div>
-            <h2 className="text-red-500 text-2xl font-bold">Direccion</h2>
+          <div className="z-0">
+            <h2 className="text-red-500 text-xl font-bold">Direccion</h2>
             <p>Sáenz Peña 863,</p>
             <p>B7000 Tandil, Provincia de Buenos Aires, Argentina</p>
             <Mapa />
           </div>
         </div>
-        <div className="w-1 h-[70vh] bg-red-500"></div>
-        <div className="w-1/3">
+        <div className="md:w-1 md:h-[70vh] w-[90%] h-1 md:flex bg-red-500"></div>
+        <div className="md:w-1/3 w-full p-8 h-full">
           <form className="flex flex-col gap-4">
             <label className="text-2xl font-semibold text-red-500">
               Nombre y Apellido

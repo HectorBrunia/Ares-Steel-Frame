@@ -1,138 +1,121 @@
-import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
-const vid = [
-  "/ejemplo-vid.mp4",
-  "/ejemplo-vid2.mp4",
-  "/ejemplo-vid4.mp4",
-  "/ejemplo-vid5.mp4",
-  "/ejemplo-vid3.mp4",
+import { useEffect, useRef, useState } from "react";
+
+const videos = [
+  {
+    title: "Eficiencia",
+    description:
+      "Optimizamos tiempos de construcción con materiales innovadores.",
+    video: "/ejemplo-vid.mp4",
+  },
+  {
+    title: "Calidad garantizada",
+    description: "Cumplimos con los más altos estándares constructivos.",
+    video: "/ejemplo-vid2.mp4",
+  },
+  {
+    title: "Experiencia",
+    description:
+      "Contamos con un equipo técnico especializado y amplia trayectoria.",
+    video: "/ejemplo-vid3.mp4",
+  },
+  {
+    title: "Sostenibilidad",
+    description: "Construcciones más livianas y energéticamente eficientes.",
+    video: "/ejemplo-vid4.mp4",
+  },
+  {
+    title: "Cobertura nacional",
+    description: "Trabajamos en Tandil y en cualquier ciudad de Argentina.",
+    video: "/ejemplo-vid5.mp4",
+  },
 ];
 
 const Nosotros = () => {
-  const [videoIndex, setVideoIndex] = useState(0);
-  const videoRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRefs = useRef([]); // Referencias a los videos
 
+  // Reproducir el primer video al cargar el componente
+  useEffect(() => {
+    if (videoRefs.current[0]) {
+      videoRefs.current[0].play();
+    }
+  }, []);
+
+  // Cambiar el input marcado y reproducir el video correcto cada 5 segundos
   useEffect(() => {
     const interval = setInterval(() => {
-      setVideoIndex((prev) => (prev + 1) % vid.length);
+      const nextIndex = (currentIndex + 1) % videos.length;
+      handleVideoChange(nextIndex);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load(); // 🔥 Recarga el video
+  // Manejar el cambio de video (automático o por clic del usuario)
+  const handleVideoChange = (index) => {
+    setCurrentIndex(index);
+
+    // Cambiar el input marcado
+    const input = document.getElementById(`s${index + 1}`);
+    if (input) {
+      input.checked = true;
     }
-  }, [videoIndex]);
+
+    // Reproducir solo el video actual, pausar los demás
+    videoRefs.current.forEach((video, i) => {
+      if (video) {
+        if (i === index) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    });
+  };
 
   return (
-    <motion.section
-      className="my-36 bg-white z-10 mx-auto w-full"
-      initial={{ opacity: 0, translateY: -2 }} // Inicialmente invisible y más abajo
-      whileInView={{ opacity: 1, translateY: 0 }} // Se hace visible al entrar en pantalla
-      viewport={{ once: true, amount: 0.3 }} // Se activa cuando el 30% del elemento es visible
-      transition={{ duration: 1.5, ease: "easeOut" }} // Duración
-    >
-      <h1 className="mx-auto w-fit text-4xl font-bold mb-6">
-        Por Qué Elegirnos
+    <section className="py-20 h-[1200px] bg-gray-100 nosotros">
+      <h1 className="text-center text-5xl font-bold my-20">
+        Por qué elegirnos
       </h1>
-      <div className="mx-auto flex flex-row gap-2 max-w-7xl items-center justify-baseline">
-        <div className="mx-auto flex flex-col gap-16 w-[400px] items-center justify-center">
-          <div
-            className={`transition-all duration-500 ${videoIndex === 0 ? "opacity-100 scale-110" : "opacity-40 scale-90"}`}
-          >
-            <h2 className="text-2xl font-bold text-red-500">Eficiencia</h2>
-            <p className="text-gray-600">
-              Optimizamos tiempos de construcción con materiales innovadores.
-            </p>
-            <div className="w-full h-1 bg-gray-300 mt-2 overflow-hidden">
-              <div
-                className={`h-full w-0 bg-red-500 transition-all duration-[5000ms] ${
-                  videoIndex === 0 ? "w-full" : "w-0"
-                }`}
-              ></div>
-            </div>
-          </div>
-          <div
-            className={`transition-all duration-500 ${videoIndex === 1 ? "opacity-100 scale-110" : "opacity-40 scale-90"}`}
-          >
-            <h2 className="text-2xl font-bold text-red-500">
-              Calidad garantizada
-            </h2>
-            <p className="text-gray-600">
-              Cumplimos con los más altos estándares constructivos.
-            </p>
-            <div className="w-full h-1 bg-gray-300 mt-2 overflow-hidden">
-              <div
-                className={`h-full w-0 bg-red-500 transition-all duration-[5000ms] ${
-                  videoIndex === 1 ? "w-full" : "w-0"
-                }`}
-              ></div>
-            </div>
-          </div>
-          <div
-            className={`transition-all duration-500 ${videoIndex === 2 ? "opacity-100 scale-110" : "opacity-40 scale-90"}`}
-          >
-            <h2 className="text-2xl font-bold text-red-500">Experiencia</h2>
-            <p className="text-gray-600">
-              Contamos con un equipo técnico especializado y amplia trayectoria.
-            </p>
-            <div className="w-full h-1 bg-gray-300 mt-2 overflow-hidden">
-              <div
-                className={`h-full w-0 bg-red-500 transition-all duration-[5000ms] ${
-                  videoIndex === 2 ? "w-full" : "w-0"
-                }`}
-              ></div>
-            </div>
-          </div>
-          <div
-            className={`transition-all duration-500 ${videoIndex === 3 ? "opacity-100 scale-110" : "opacity-40 scale-90"}`}
-          >
-            <h2 className="text-2xl font-bold text-red-500">Sostenibilidad</h2>
-            <p className="text-gray-600">
-              Construcciones más livianas y energéticamente eficientes
-            </p>
-            <div className="w-full h-1 bg-gray-300 mt-2 overflow-hidden">
-              <div
-                className={`h-full w-0 bg-red-500 transition-all duration-[5000ms] ${
-                  videoIndex === 3 ? "w-full" : "w-0"
-                }`}
-              ></div>
-            </div>
-          </div>
-          <div
-            className={`transition-all duration-500 ${videoIndex === 4 ? "opacity-100 scale-110" : "opacity-40 scale-90"}`}
-          >
-            <h2 className="text-2xl font-bold text-red-500">
-              Cobertura nacional
-            </h2>
-            <p className="text-gray-600">
-              Trabajamos en Tandil y en cualquier ciudad de Argentina.
-            </p>
-            <div className="w-full h-1 bg-gray-300 mt-2 overflow-hidden">
-              <div
-                className={`h-full w-0 bg-red-500 transition-all duration-[5000ms] ${
-                  videoIndex === 4 ? "w-full" : "w-0"
-                }`}
-              ></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <video
-            ref={videoRef}
-            className="h-[80vh] w-[430px] shadow-2xl rounded-lg"
-            autoPlay
-            loop
-            muted
-          >
-            <source src={vid[videoIndex]} type="video/mp4" />
-            Tu navegador no soporta el video.
-          </video>
+      <div className="cont mx-auto">
+        {videos.map((_, index) => (
+          <input
+            key={index}
+            type="radio"
+            name="slaider"
+            id={`s${index + 1}`}
+            defaultChecked={index === 0}
+            onChange={() => handleVideoChange(index)} // Detectar el clic manual
+          />
+        ))}
+        <div className="cards">
+          {videos.map((video, index) => (
+            <label
+              key={index}
+              htmlFor={`s${index + 1}`}
+              id={`slide${index + 1}`}
+            >
+              <div className="card">
+                <div className="image">
+                  <video
+                    ref={(el) => (videoRefs.current[index] = el)} // Guardar la referencia
+                    className="h-[50vh] object-cover rounded-2xl shadow-2xl mx-auto"
+                    src={video.video}
+                    loop
+                    muted
+                  />
+                </div>
+                <div className="text-center p-6">
+                  <p className="text-3xl text-red-500 p-4">{video.title}</p>
+                  <p className="text-2xl text-white">{video.description}</p>
+                </div>
+              </div>
+            </label>
+          ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

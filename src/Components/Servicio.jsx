@@ -41,7 +41,10 @@ const services = [
 
 const Servicios = () => {
   return (
-    <section id="servicios" className="relative -z-0 h-[300vh] overflow-hidden">
+    <section
+      id="servicios"
+      className="relative -z-0 h-[3400px] md:h-[3000px]  overflow-hidden"
+    >
       <Parallax speed={-300}>
         <div
           className="h-[150vh] absolute -z-10 w-full top-[-320px] bg-cover bg-center bg-no-repeat"
@@ -53,11 +56,11 @@ const Servicios = () => {
         ></div>
       </Parallax>
       <Parallax speed={30}>
-        <div className="mx-auto backdrop-blur-sm h-[300vh] pt-60 absolute top-60 z-10 w-full">
-          <h2 className="mx-auto text-4xl w-fit font-bold text-center  mb-12">
+        <div className="mx-auto backdrop-blur-sm pt-60 absolute top-60 z-10 w-full">
+          <h2 className="mx-auto text-4xl w-fit font-bold text-center mb-12">
             Nuestros Servicios
           </h2>
-          <div className="mx-auto flex flex-col gap-12 max-w-7xl items-center justify-center">
+          <div className="mx-auto flex flex-col gap-28 max-w-7xl items-center justify-center">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -72,13 +75,13 @@ const Servicios = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-[600px] h-[350px] object-cover rounded-lg shadow-md"
+                  className="md:w-[600px] md:h-[350px] w-[400px] h-[250px] object-cover rounded-lg shadow-md"
                 />
                 <div className="max-w-lg md:text-left">
                   <h3 className="text-2xl text-center font-semibold">
                     {service.title}
                   </h3>
-                  <div className="bg-red-500 my-6 w-[500px] mx-auto h-[2px]"></div>
+                  <div className="bg-red-500 my-6 md:w-[500px] mx-auto h-[2px]"></div>
                   <p className="text-gray-800  text-center mt-2">
                     {service.description}
                   </p>

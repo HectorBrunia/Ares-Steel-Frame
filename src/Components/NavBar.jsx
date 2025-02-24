@@ -10,7 +10,7 @@ const NavBar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <header>
-      <nav className="bg-red-600 lg:flex hidden fixed z-10 w-full text-white felx-col px-20 py-2  justify-between items-center">
+      <nav className="bg-red-600 lg:flex hidden fixed z-50 w-full text-white felx-col px-20 py-2  justify-between items-center">
         <div>
           <img
             className="w-20 h-20 ml-8 rounded-full grow"
@@ -82,7 +82,7 @@ const NavBar = () => {
           </a>
         </div>
       </nav>
-      <nav className="bg-red-600 fixed z-20 w-full lg:hidden text-white flex justify-between items-center px-6 py-4">
+      <nav className="bg-red-600 fixed z-50 w-full lg:hidden text-white flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div>
           <img
