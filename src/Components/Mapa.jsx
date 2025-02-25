@@ -11,14 +11,14 @@ const Mapa = () => {
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowUrl: null, // Evitar la sombra
+    shadowUrl: null,
   });
 
   return (
     <MapContainer
       center={position}
       zoom={15}
-      style={{ height: "200px", width: "80%" }}
+      style={{ height: "300px", width: "100%" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

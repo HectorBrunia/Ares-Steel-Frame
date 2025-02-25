@@ -50,7 +50,7 @@ const Proyectos = () => {
       <AnimatePresence>
         {selectedImage !== null && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+            className="fixed inset-0  backdrop-brightness-20 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -62,7 +62,7 @@ const Proyectos = () => {
               <FaTimes />
             </button>
             <button
-              className="absolute left-5 text-white text-3xl bg-red-500 rounded-full"
+              className="absolute lg:left-52 left-5 text-white text-3xl bg-red-500 rounded-full"
               onClick={prevImage}
             >
               <FaArrowLeft />
@@ -73,7 +73,7 @@ const Proyectos = () => {
               className="max-w-3xl max-h-[80vh] rounded-lg"
             />
             <button
-              className="absolute right-5 text-white text-3xl bg-red-500 rounded-full"
+              className="absolute lg:right-52 right-5 text-white text-3xl bg-red-500 rounded-full"
               onClick={nextImage}
             >
               <FaArrowRight />

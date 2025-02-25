@@ -6,9 +6,8 @@ import Servicios from "./Components/Servicio";
 import SestemasConstructivos from "./Components/SistemasConstructivos";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Footer from "./Components/Footer";
-
 import "leaflet/dist/leaflet.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import Proyectos from "./Components/Proyectos";
 
 function App() {
@@ -31,8 +30,8 @@ function App() {
         <section id="contacto">
           <Contacto />
         </section>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
