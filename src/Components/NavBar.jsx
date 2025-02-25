@@ -47,6 +47,19 @@ const NavBar = () => {
           </li>
           <li>
             <Link
+              to="proyectos"
+              smooth={true}
+              duration={500}
+              style={{ transition: "all 1s ease-in-out" }}
+              spy={true}
+              activeClass="text-lg font-bold"
+              className="cursor-pointer"
+            >
+              Nuestros Proyectos
+            </Link>
+          </li>
+          <li>
+            <Link
               to="Sistemas Constructivos"
               smooth={true}
               duration={500}
@@ -112,6 +125,7 @@ const NavBar = () => {
               { to: "nosotros", text: "Sobre Nosotros" },
               { to: "servicios", text: "Nuestros Servicios" },
               { to: "Sistemas Constructivos", text: "Sistemas Constructivos" },
+              { to: "proyectos", text: "Nuestros Proyectos" },
               { to: "contacto", text: "Contáctanos" },
             ].map((link, index) => (
               <li key={index}>

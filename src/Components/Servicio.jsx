@@ -43,7 +43,7 @@ const Servicios = () => {
   return (
     <section
       id="servicios"
-      className="relative -z-0 h-[3400px] md:h-[3000px]  overflow-hidden"
+      className="relative -z-0 h-[3400px] lg:h-[3000px]  overflow-hidden"
     >
       <Parallax speed={-300}>
         <div
@@ -64,8 +64,8 @@ const Servicios = () => {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className={`flex flex-col md:flex-row items-center gap-6 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                className={`flex flex-col lg:flex-row items-center gap-6 ${
+                  index % 2 === 0 ? "lg:flex-row-reverse" : ""
                 }`}
                 initial={{ opacity: 0, scale: 0 }} // Inicialmente invisible y más abajo
                 whileInView={{ opacity: 1, scale: 1 }} // Se hace visible al entrar en pantalla
@@ -75,7 +75,7 @@ const Servicios = () => {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="md:w-[600px] md:h-[350px] w-[400px] h-[250px] object-cover rounded-lg shadow-md"
+                  className="lg:w-[500px] lg:h-[350px] w-[400px] h-[250px] object-cover rounded-lg shadow-md"
                 />
                 <div className="max-w-lg md:text-left">
                   <h3 className="text-2xl text-center font-semibold">

@@ -74,8 +74,8 @@ const Nosotros = () => {
   };
 
   return (
-    <section className="py-20 h-[1200px] bg-gray-100 nosotros">
-      <h1 className="text-center text-5xl font-bold my-20">
+    <section className="py-20 h-[900px] md:h-[1400px] bg-gray-100 nosotros">
+      <h1 className="text-center text-4xl font-bold my-10">
         Por qué elegirnos
       </h1>
       <div className="cont mx-auto">
@@ -89,7 +89,7 @@ const Nosotros = () => {
             onChange={() => handleVideoChange(index)} // Detectar el clic manual
           />
         ))}
-        <div className="cards">
+        <div className="cards ">
           {videos.map((video, index) => (
             <label
               key={index}
@@ -100,15 +100,19 @@ const Nosotros = () => {
                 <div className="image">
                   <video
                     ref={(el) => (videoRefs.current[index] = el)} // Guardar la referencia
-                    className="h-[50vh] object-cover rounded-2xl shadow-2xl mx-auto"
+                    className="h-[300px] md:h-[50vh] md:mt-4 object-cover rounded-2xl shadow-2xl mx-auto"
                     src={video.video}
                     loop
                     muted
                   />
                 </div>
-                <div className="text-center p-6">
-                  <p className="text-3xl text-red-500 p-4">{video.title}</p>
-                  <p className="text-2xl text-white">{video.description}</p>
+                <div className="text-center md:p-6 w-[200px] md:w-[400px] ">
+                  <p className="text-xl md:text-3xl text-red-500 p-4">
+                    {video.title}
+                  </p>
+                  <p className="text-lg md:text-2xl w-full text-white">
+                    {video.description}
+                  </p>
                 </div>
               </div>
             </label>
