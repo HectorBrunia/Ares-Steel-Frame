@@ -3,7 +3,7 @@ import { ImInstagram } from "react-icons/im";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 
 const links = [
   { to: "nosotros", text: "Sobre Nosotros" },
@@ -15,7 +15,7 @@ const links = [
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  console.log(isDropdownOpen);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
@@ -32,17 +32,23 @@ const NavBar = () => {
         </div>
         <div className="relative">
           <NavLink
-            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseEnter={() => {
+              if (location.pathname === "/") {
+                setIsDropdownOpen(true);
+              }
+            }}
             onMouseLeave={() => setIsDropdownOpen(false)}
             to="/"
-            className="cursor-pointer p-4 px-8 text-xl "
+            className={({ isActive }) =>
+              ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+            }
           >
             Inicio
           </NavLink>
           <div
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
-            className={`absolute w-[260px] flex flex-col  bg-red-600 top-8 p-5 -left-5 ${!isDropdownOpen && "hidden"}`}
+            className={`absolute w-[220px] flex flex-col  bg-red-600 top-[39px] p-4 -left-5 ${!isDropdownOpen && "hidden"}`}
           >
             {isDropdownOpen && (
               <motion.ul
@@ -53,6 +59,9 @@ const NavBar = () => {
                 {links.map((link, index) => (
                   <li key={index} className="hover:scale-110  my-2 text-left">
                     <Link
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                      }}
                       to={`${link.to}`}
                       smooth={true}
                       duration={500}
@@ -69,14 +78,18 @@ const NavBar = () => {
           </div>
           <NavLink
             to="/contactanos"
-            className="cursor-pointer text-xl p-4 px-8"
+            className={({ isActive }) =>
+              ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+            }
           >
             Contáctanos
           </NavLink>
 
           <NavLink
             to="/trabajaconnos"
-            className="cursor-pointer text-xl p-4 px-8"
+            className={({ isActive }) =>
+              ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+            }
           >
             Trabaja con nosotros
           </NavLink>
@@ -109,7 +122,6 @@ const NavBar = () => {
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
 
-        {/* Menú desplegable */}
         {isOpen && (
           <motion.ul
             initial={{ opacity: 0, y: -20 }}
@@ -117,23 +129,59 @@ const NavBar = () => {
             transition={{ duration: 0.3 }}
             className="absolute top-20 left-0 w-full bg-red-600 text-center flex flex-col gap-6 py-8 shadow-lg rounded-b-xl"
           >
-            {links.map((link, index) => (
-              <li key={index}>
+            <NavLink
+              onClick={() => {
+                setIsDropdownOpen(!isDropdownOpen);
+              }}
+              to="/"
+              className={({ isActive }) =>
+                ` p-2 w-fit mx-auto text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+              }
+            >
+              Inicio
+            </NavLink>
+
+            {isDropdownOpen &&
+              links.map((link, index) => (
                 <Link
-                  to={link.to}
+                  onClick={() => {
+                    setIsDropdownOpen(false), setIsOpen(false);
+                  }}
+                  key={index}
+                  to={`${link.to}`}
                   smooth={true}
                   duration={500}
                   spy={true}
                   activeClass="font-bold text-lg"
-                  className="cursor-pointer text-white text-xl"
-                  onClick={() => setIsOpen(false)} // Cerrar menú al hacer clic
+                  className="cursor-pointer text-white text-lg  "
                 >
                   {link.text}
                 </Link>
-              </li>
-            ))}
+              ))}
 
-            {/* Instagram */}
+            <NavLink
+              onClick={() => {
+                setIsDropdownOpen(false), setIsOpen(false);
+              }}
+              to="/contactanos"
+              className={({ isActive }) =>
+                ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+              }
+            >
+              Contáctanos
+            </NavLink>
+
+            <NavLink
+              onClick={() => {
+                setIsDropdownOpen(false), setIsOpen(false);
+              }}
+              to="/trabajaconnos"
+              className={({ isActive }) =>
+                ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+              }
+            >
+              Trabaja con nosotros
+            </NavLink>
             <li>
               <a
                 target="_blank"
