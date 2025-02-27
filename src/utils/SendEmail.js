@@ -15,7 +15,7 @@ export const SendEmail = async (formData) => {
     area: formData.get("area"),
     contactoPreferido: formData.getAll("contactoPreferido").join(", "),
     consentimiento: formData.get("consentimiento"),
-    message: formData.get("archivoURL"),
+    message: `<ul>${formData.get("archivoURL")}</ul>`,
   };
 
   // Enviamos solo los datos sin archivos adjuntos
