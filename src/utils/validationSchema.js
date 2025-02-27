@@ -25,3 +25,21 @@ const schema = yup.object().shape({
 });
 
 export default schema;
+
+export const schemaTrabajo = yup.object().shape({
+  nombreCompleto: yup.string().required("El nombre es obligatorio"),
+  email: yup
+    .string()
+    .email("Email inválido")
+    .required("El email es obligatorio"),
+  puesto: yup.array().min(1, "Elige al menos una opción de contacto"),
+  experiencia: yup.string().required("Selecciona experiencia"),
+  trabajoAnterior: yup.string().required("Selecciona experiencia"),
+  experienciaLaboral: yup.string().required("Selecciona experiencia"),
+  disponibilidad: yup.string().required("Selecciona disponibilidad"),
+  viajar: yup.boolean(),
+  disponibilidadInmediata: yup.boolean(),
+  consentimiento: yup.boolean().oneOf([true], "Debes aceptar los términos"),
+  certificaciones: yup.string().optional("ingresa certificaciones"),
+  archivos: yup.mixed().notRequired(),
+});
