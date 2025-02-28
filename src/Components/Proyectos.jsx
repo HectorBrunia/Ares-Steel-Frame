@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
@@ -38,17 +38,23 @@ const media = [
 const Proyectos = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const nextMedia = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % media.length);
-    }
-  };
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedIndex(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
-  const prevMedia = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + media.length) % media.length);
-    }
-  };
+  const nextMedia = useCallback(() => {
+    setSelectedIndex((prevIndex) => (prevIndex + 1) % media.length);
+  }, []);
+
+  const prevMedia = useCallback(() => {
+    setSelectedIndex(
+      (prevIndex) => (prevIndex - 1 + media.length) % media.length
+    );
+  }, []);
 
   return (
     <section className="py-10">
@@ -65,6 +71,7 @@ const Proyectos = () => {
               <img
                 src={item.src}
                 alt={`Proyecto ${index + 1}`}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             ) : (
@@ -72,8 +79,8 @@ const Proyectos = () => {
                 src={item.src}
                 className="w-full h-full object-cover"
                 muted
-                loop
-              ></video>
+                preload="metadata"
+              />
             )}
           </motion.div>
         ))}
@@ -83,9 +90,10 @@ const Proyectos = () => {
         {selectedIndex !== null && (
           <motion.div
             className="fixed inset-0 backdrop-brightness-20 flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}
           >
             <button
               className="absolute top-5 right-5 bg-red-500 rounded-full text-white text-3xl"
@@ -108,8 +116,9 @@ const Proyectos = () => {
             ) : (
               <video
                 src={media[selectedIndex].src}
-                controls
                 autoPlay
+                muted
+                preload="none"
                 className="max-w-3xl max-h-[80vh] rounded-lg"
               ></video>
             )}

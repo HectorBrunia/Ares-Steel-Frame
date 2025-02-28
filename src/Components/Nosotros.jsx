@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { FiWind } from "react-icons/fi";
 import { GiInsectJaws } from "react-icons/gi";
 import { PiVirusFill } from "react-icons/pi";
@@ -36,7 +36,6 @@ const videos = [
 ];
 
 const Nosotros = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const videoRefs = useRef([]); // Referencias a los videos
 
   // Reproducir el primer video al cargar el componente
@@ -47,19 +46,9 @@ const Nosotros = () => {
   }, []);
 
   // Cambiar el input marcado y reproducir el video correcto cada 5 segundos
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % videos.length;
-      handleVideoChange(nextIndex);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex]);
 
   // Manejar el cambio de video (automático o por clic del usuario)
   const handleVideoChange = (index) => {
-    setCurrentIndex(index);
-
     // Cambiar el input marcado
     const input = document.getElementById(`s${index + 1}`);
     if (input) {
@@ -128,8 +117,10 @@ const Nosotros = () => {
       </section>
       <section className="bg-red-700 text-white mb-0 py-10 px-5">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">¿Por qué Steel Framing?</h2>
-          <p className="text-lg mb-8">
+          <h2 className="md:text-4xl text-2xl font-bold mb-4">
+            ¿Por qué Steel Framing?
+          </h2>
+          <p className="md:text-lg mb-8">
             El steel framing, también conocido como acero conformado en frío
             (CFS), es resistente, adaptable y duradero. No se degrada ni
             envejece tan rápido como otros materiales de construcción como la
@@ -140,36 +131,36 @@ const Nosotros = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             <div className="flex flex-col items-center">
-              <FiWind size={50} />
+              <FiWind size={30} />
               <p className="text-center font-semibold">
                 Resiste fuertes vientos y sismos
               </p>
             </div>
 
             <div className="flex flex-col items-center">
-              <GiInsectJaws size={50} />
+              <GiInsectJaws size={30} />
               <p className="text-center font-semibold">
                 Resiste termitas y plagas
               </p>
             </div>
 
             <div className="flex flex-col items-center">
-              <PiVirusFill size={50} />
+              <PiVirusFill size={30} />
               <p className="text-center font-semibold">Resistente al moho</p>
             </div>
 
             <div className="flex flex-col items-center">
-              <FaHandHoldingDollar size={50} />
+              <FaHandHoldingDollar size={30} />
               <p className="text-center font-semibold">Menores costos</p>
             </div>
 
             <div className="flex flex-col items-center">
-              <GiFluffyFlame size={50} />
+              <GiFluffyFlame size={30} />
               <p className="text-center font-semibold">No es inflamable</p>
             </div>
 
             <div className="flex flex-col items-center">
-              <IoWater size={50} />
+              <IoWater size={30} />
               <p className="text-center font-semibold">
                 Resistente a la corrosión
               </p>

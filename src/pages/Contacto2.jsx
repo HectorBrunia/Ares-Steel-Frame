@@ -13,8 +13,6 @@ import FileUpload from "../Components/FileUpload";
 import InputField from "../Components/InputField";
 import SelectField from "../Components/SelectField";
 import ReCAPTCHA from "react-google-recaptcha";
-//6Lf5zOUqAAAAADxQ5kw7-OBGijF65MTT0Vv7CuNE
-//6Lf5zOUqAAAAAASLmYtIQ65tI-9akQuNHtVRffTS
 const Contacto2 = () => {
   const [filePreviews, setFilePreviews] = useState([]);
 
@@ -60,9 +58,6 @@ const Contacto2 = () => {
     setIsSending(true);
     const formData = new FormData(formRef.current);
     const files = formData.getAll("archivos");
-    console.log(phone);
-    console.log(ciudad.value);
-    console.log(files);
     formData.append("ubicacion", ciudad.value);
     formData.append("telefono", phone);
     let urls = [];

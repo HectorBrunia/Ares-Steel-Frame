@@ -106,13 +106,9 @@ const NavBar = () => {
         </div>
       </nav>
       <nav className="bg-red-600 fixed z-50 w-full lg:hidden text-white flex justify-between items-center px-6 py-4">
-        <div>
-          <img
-            className="w-16 h-16 rounded-full"
-            src="/logo.jpeg"
-            alt="Logo Ares Steel Frame"
-          />
-        </div>
+        <NavLink to="/" className="cursor-pointer">
+          <img className="w-20 h-20 rounded-full" src="/logo.jpeg" alt="Logo" />
+        </NavLink>
 
         {/* Botón hamburguesa */}
         <button
