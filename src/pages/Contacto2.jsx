@@ -295,7 +295,7 @@ const Contacto2 = () => {
             error={errors.archivos}
           />
           <ReCAPTCHA
-            sitekey="TU_CLAVE_DEL_SITIO"
+            sitekey="6Lf5zOUqAAAAADxQ5kw7-OBGijF65MTT0Vv7CuNE"
             onChange={(value) => setCaptchaValido(value)}
             ref={recaptchaRef}
           />
