@@ -21,17 +21,17 @@ const videos = [
     title: "Experiencia",
     description:
       "Contamos con un equipo técnico especializado y amplia trayectoria.",
-    video: "/ejemplo-vid3.mp4",
+    video: "/ejemplo-vid4.mp4",
   },
   {
     title: "Sostenibilidad",
     description: "Construcciones más livianas y energéticamente eficientes.",
-    video: "/ejemplo-vid4.mp4",
+    video: "/ejemplo-vid5.mp4",
   },
   {
     title: "Cobertura nacional",
     description: "Trabajamos en Tandil y en cualquier ciudad de Argentina.",
-    video: "/ejemplo-vid5.mp4",
+    video: "/ejemplo-vid3-2.mp4",
   },
 ];
 
@@ -95,7 +95,7 @@ const Nosotros = () => {
                   <div className="image">
                     <video
                       ref={(el) => (videoRefs.current[index] = el)} // Guardar la referencia
-                      className="h-[300px] md:h-[50vh] md:mt-4 object-cover rounded-2xl shadow-2xl mx-auto"
+                      className="h-[300px] w-[170px] md:w-[250px] md:h-[450px] md:mt-4 object-cover rounded-2xl shadow-2xl mx-auto"
                       src={video.video}
                       loop
                       muted
