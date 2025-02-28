@@ -3,8 +3,8 @@ import Mapa from "./Mapa";
 const Contacto = () => {
   return (
     <section className="mx-auto py-16 md:max-w-7xl w-full bg-white text-black">
-      <div className=" w-full p-8 flex flex-row gap-10">
-        <div className="w-1/2">
+      <div className=" w-full p-8 flex md:flex-row flex-col gap-10">
+        <div className="w-1/2 flex flex-col gap-2">
           <h2 className="text-red-500 text-xl font-bold">Email</h2>
           <p>ares.steelframe@gmail.com</p>
           <h2 className="text-red-500 text-xl font-bold">Telefono</h2>
@@ -22,7 +22,7 @@ const Contacto = () => {
           <p>Sáenz Peña 863,</p>
           <p>B7000 Tandil, Provincia de Buenos Aires, Argentina</p>
         </div>
-        <div className="w-1/2 h-full z-0">
+        <div className="w-full h-full z-0">
           <Mapa />
         </div>
       </div>

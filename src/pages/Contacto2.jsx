@@ -12,7 +12,9 @@ import MessageModal from "../Components/MessageModal";
 import FileUpload from "../Components/FileUpload";
 import InputField from "../Components/InputField";
 import SelectField from "../Components/SelectField";
-
+import ReCAPTCHA from "react-google-recaptcha";
+//6Lf5zOUqAAAAADxQ5kw7-OBGijF65MTT0Vv7CuNE
+//6Lf5zOUqAAAAAASLmYtIQ65tI-9akQuNHtVRffTS
 const Contacto2 = () => {
   const [filePreviews, setFilePreviews] = useState([]);
 
@@ -33,6 +35,9 @@ const Contacto2 = () => {
     setFilePreviews(newFiles);
   };
 
+  const [captchaValido, setCaptchaValido] = useState(null);
+  const recaptchaRef = useRef(null);
+
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState(null);
   const [phone, setPhone] = useState("");
@@ -47,6 +52,10 @@ const Contacto2 = () => {
   });
 
   const onSubmit = async (data, e) => {
+    if (!captchaValido) {
+      alert("Por favor, completa el reCAPTCHA.");
+      return;
+    }
     e.preventDefault();
     setIsSending(true);
     const formData = new FormData(formRef.current);
@@ -284,6 +293,11 @@ const Contacto2 = () => {
             handleFileChange={handleFileChange}
             removeFile={removeFile}
             error={errors.archivos}
+          />
+          <ReCAPTCHA
+            sitekey="TU_CLAVE_DEL_SITIO"
+            onChange={(value) => setCaptchaValido(value)}
+            ref={recaptchaRef}
           />
 
           {isSending ? (

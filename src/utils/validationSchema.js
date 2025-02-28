@@ -40,6 +40,6 @@ export const schemaTrabajo = yup.object().shape({
   viajar: yup.boolean(),
   disponibilidadInmediata: yup.boolean(),
   consentimiento: yup.boolean().oneOf([true], "Debes aceptar los términos"),
-  certificaciones: yup.string().optional("ingresa certificaciones"),
+  certificaciones: yup.string().notRequired(),
   archivos: yup.mixed().notRequired(),
 });
