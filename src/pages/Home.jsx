@@ -12,17 +12,31 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>
-          Ares Steel Frame - Construcciónes Moderna, Eficiente y Confiable
-        </title>
-        <meta
-          name="description"
-          content="Somos una empresa constructora especializada en Steel Framing, con un equipo propio de trabajo altamente capacitado. Nuestro enfoque está en la eficiencia, calidad y rapidez en cada obra, brindando soluciones modernas y personalizadas en toda Argentina."
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
-        />
+        <>
+          <meta property="og:title" content="Ares Steel Frame" />
+          <meta
+            property="og:description"
+            content="Construcción Moderna, Eficiente y Confiable"
+          />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
+          />
+          <meta property="og:url" content="https://aressteelframe.com/" />
+          <meta property="og:type" content="website" />
+          <>
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Ares Steel Frame" />
+            <meta
+              name="twitter:description"
+              content="Construcción Moderna, Eficiente y Confiable"
+            />
+            <meta
+              name="twitter:image"
+              content="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
+            />
+          </>
+        </>
       </Helmet>
       <div className="felx-col overflow-hidden items-center justify-center">
         <section id="nosotros">
