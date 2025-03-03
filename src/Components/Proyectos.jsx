@@ -259,6 +259,7 @@ const Proyectos = () => {
                 cldVid={cld.video(media[selectedIndex].id)}
                 className="max-w-3xl max-h-[80vh] rounded-lg"
                 autoOptimize={true}
+                autoPlay
               />
             )}
             <button
