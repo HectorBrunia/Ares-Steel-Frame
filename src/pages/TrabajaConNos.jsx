@@ -1,7 +1,10 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRef, useState } from "react";
-import { uploadImageToCloudinary } from "../utils/Uploadimg";
+import {
+  uploadArchivoToCloudinary,
+  uploadImageToCloudinary,
+} from "../utils/Uploadimg";
 import { sendEmailTrabajo } from "../utils/SendEmail";
 import PhoneInput from "react-phone-input-2";
 import Select from "react-select";
@@ -13,6 +16,10 @@ import FileUpload from "../Components/FileUpload";
 import InputField from "../Components/InputField";
 import SelectField from "../Components/SelectField";
 import { Helmet } from "react-helmet-async";
+import {
+  getAnalysisReport,
+  scanFileWithVirusTotal,
+} from "../utils/AnalizarArchivo";
 /* import ReCAPTCHA from "react-google-recaptcha"; */
 
 const TrabajaConNos = () => {
@@ -67,15 +74,36 @@ const TrabajaConNos = () => {
       for (const file of files) {
         if (file.size > 10 * 1024 * 1024) {
           alert(`El archivo ${file.name} es demasiado grande. Máximo 10MB.`);
-          setIsSending(false);
           return;
         }
-
-        const uploadedUrl = await uploadImageToCloudinary(file);
-        if (uploadedUrl) {
-          urls.push(
-            `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
-          );
+        if (file.type == "application/x-zip-compressed") {
+          setMessage("analizando archivo ...");
+          const analysisId = await scanFileWithVirusTotal(file);
+          if (!analysisId) {
+            setMessage("No se pudo analizar el archivo");
+            return;
+          }
+          setMessage("buscando virus....");
+          const report = await getAnalysisReport(analysisId);
+          if (report.malicious > 0) {
+            setMessage("Se detectaron virus en el archivo");
+            return;
+          } else {
+            setMessage("subiendo archivo");
+            const uploadedUrl = await uploadArchivoToCloudinary(file);
+            if (uploadedUrl) {
+              urls.push(
+                `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
+              );
+            }
+          }
+        } else {
+          const uploadedUrl = await uploadImageToCloudinary(file);
+          if (uploadedUrl) {
+            urls.push(
+              `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
+            );
+          }
         }
       }
     }

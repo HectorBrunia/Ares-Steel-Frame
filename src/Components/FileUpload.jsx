@@ -17,7 +17,7 @@ const FileUpload = ({
           {...register("archivos")}
           type="file"
           multiple
-          accept=".pdf,.dwg,.jpg,.png,.zip"
+          accept=".pdf,.jpg,.png,.zip"
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           onChange={handleFileChange}
         />
@@ -33,9 +33,12 @@ const FileUpload = ({
         >
           <path d="M12 3v10M8 7h8M6 16h12M6 20h12" />
         </svg>
-        <p className="text-gray-700 text-sm">Haz clic para subir archivos</p>
+        <p className="text-gray-700 text-sm">
+          Haz clic para subir archivos (si tines archivos no soportados subelos
+          a un archivo .zip)
+        </p>
         <p className="text-xs text-gray-500">
-          Formatos permitidos: PDF, DWG, JPG, PNG, ZIP
+          Formatos permitidos: PDF, JPG, PNG, ZIP
         </p>
       </div>
 
