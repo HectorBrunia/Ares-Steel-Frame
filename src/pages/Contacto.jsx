@@ -13,7 +13,7 @@ import FileUpload from "../Components/FileUpload";
 import InputField from "../Components/InputField";
 import SelectField from "../Components/SelectField";
 /* import ReCAPTCHA from "react-google-recaptcha"; */
-const Contacto2 = () => {
+const Contacto = () => {
   const [filePreviews, setFilePreviews] = useState([]);
 
   const handleFileChange = (e) => {
@@ -316,4 +316,4 @@ const Contacto2 = () => {
   );
 };
 
-export default Contacto2;
+export default Contacto;
