@@ -12,6 +12,7 @@ import MessageModal from "../Components/MessageModal";
 import FileUpload from "../Components/FileUpload";
 import InputField from "../Components/InputField";
 import SelectField from "../Components/SelectField";
+import { Helmet } from "react-helmet-async";
 /* import ReCAPTCHA from "react-google-recaptcha"; */
 
 const TrabajaConNos = () => {
@@ -94,6 +95,46 @@ const TrabajaConNos = () => {
   };
   return (
     <>
+      <Helmet>
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Ares Steel Frame" />
+        <meta
+          name="keywords"
+          content="Contactanos para más información sobre construcción en Steel Frame."
+        />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:site_name" content="Ares Steel Frame" />
+        <title>Trabaja con nosotros - Ares Steel Frame</title>
+        <meta
+          name="description"
+          content="Contactanos para más información sobre construcción en Steel Frame."
+        />
+
+        {/* Open Graph (Facebook, WhatsApp, LinkedIn, etc.) */}
+        <meta property="og:title" content="Ares Steel Frame" />
+        <meta
+          property="og:description"
+          content="Contactanos para más información sobre construcción en Steel Frame."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
+        />
+        <meta property="og:url" content="https://aressteelframe.com/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Ares Steel Frame" />
+        <meta
+          name="twitter:description"
+          content="Contactanos para más información sobre construcción en Steel Frame."
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
+        />
+      </Helmet>
       <div className="py-30">
         <form
           ref={formRef}
