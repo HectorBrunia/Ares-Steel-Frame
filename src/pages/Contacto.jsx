@@ -20,7 +20,7 @@ import {
   getAnalysisReport,
   scanFileWithVirusTotal,
 } from "../utils/AnalizarArchivo";
-/* import ReCAPTCHA from "react-google-recaptcha"; */
+import ReCAPTCHA from "react-google-recaptcha";
 const Contacto = () => {
   const [filePreviews, setFilePreviews] = useState([]);
 
@@ -41,9 +41,9 @@ const Contacto = () => {
     setFilePreviews(newFiles);
   };
 
-  /* const [captchaValido, setCaptchaValido] = useState(null);
+  const [captchaValido, setCaptchaValido] = useState(null);
   const recaptchaRef = useRef(null);
- */
+
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState(null);
   const [phone, setPhone] = useState("");
@@ -58,10 +58,10 @@ const Contacto = () => {
   });
 
   const onSubmit = async (data, e) => {
-    /* if (!captchaValido) {
+    if (!captchaValido) {
       alert("Por favor, completa el reCAPTCHA.");
       return;
-    } */
+    }
     e.preventDefault();
     setIsSending(true);
     const formData = new FormData(formRef.current);
@@ -358,11 +358,11 @@ const Contacto = () => {
             removeFile={removeFile}
             error={errors.archivos}
           />
-          {/* <ReCAPTCHA
-            sitekey="6Lf5zOUqAAAAADxQ5kw7-OBGijF65MTT0Vv7CuNE"
+          <ReCAPTCHA
+            sitekey="6LcHOugqAAAAAIsjUdNwaZWA_kxiONdT540jmxba"
             onChange={(value) => setCaptchaValido(value)}
             ref={recaptchaRef}
-          /> */}
+          />
 
           {isSending ? (
             <p className="text-green-500 text-center mt-4">

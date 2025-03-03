@@ -3,7 +3,8 @@ const MessageModal = ({ message, onClose }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-brightness-75">
       <div className="bg-white text-black p-6 rounded-lg shadow-lg max-w-sm text-center animate-fade-in">
-        {message == "Correo enviado con éxito!" ? (
+        {message == "Correo enviado con éxito!" ||
+        message == "No se pudo analizar el archivo" ? (
           <div>
             <p>{message}</p>
             <button
