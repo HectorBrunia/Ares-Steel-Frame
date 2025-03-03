@@ -21,6 +21,7 @@ import {
   scanFileWithVirusTotal,
 } from "../utils/AnalizarArchivo";
 import ReCAPTCHA from "react-google-recaptcha";
+import { verificarCaptcha } from "../utils/Captcha";
 const Contacto = () => {
   const [filePreviews, setFilePreviews] = useState([]);
 
@@ -58,12 +59,27 @@ const Contacto = () => {
   });
 
   const onSubmit = async (data, e) => {
+    e.preventDefault();
+    setIsSending(true);
     if (!captchaValido) {
       alert("Por favor, completa el reCAPTCHA.");
       return;
     }
-    e.preventDefault();
-    setIsSending(true);
+    const token = recaptchaRef.current?.getValue();
+    recaptchaRef.current?.reset();
+
+    if (!token) {
+      setMessage("Por favor, completa el ReCAPTCHA.");
+      return;
+    }
+
+    const respCaptcha = await verificarCaptcha(token);
+
+    if (!respCaptcha) {
+      setMessage("Error en la validación del ReCAPTCHA.");
+      setIsSending(false);
+      return;
+    }
     const formData = new FormData(formRef.current);
     const files = formData.getAll("archivos");
     formData.append("ubicacion", ciudad.value);
@@ -101,6 +117,7 @@ const Contacto = () => {
           }
         } else {
           if (file.size > 0) {
+            setMessage("subiendo archivo");
             const uploadedUrl = await uploadImageToCloudinary(file);
             if (uploadedUrl) {
               urls.push(
