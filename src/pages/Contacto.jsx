@@ -73,6 +73,7 @@ const Contacto = () => {
       for (const file of files) {
         if (file.size > 10 * 1024 * 1024) {
           alert(`El archivo ${file.name} es demasiado grande. Máximo 10MB.`);
+          setIsSending(false);
           return;
         }
         if (file.type == "application/x-zip-compressed") {
@@ -80,12 +81,14 @@ const Contacto = () => {
           const analysisId = await scanFileWithVirusTotal(file);
           if (!analysisId) {
             setMessage("No se pudo analizar el archivo");
+            setIsSending(false);
             return;
           }
           setMessage("buscando virus....");
           const report = await getAnalysisReport(analysisId);
           if (report.malicious > 0) {
             setMessage("Se detectaron virus en el archivo");
+            setIsSending(false);
             return;
           } else {
             setMessage("subiendo archivo");
@@ -97,11 +100,13 @@ const Contacto = () => {
             }
           }
         } else {
-          const uploadedUrl = await uploadImageToCloudinary(file);
-          if (uploadedUrl) {
-            urls.push(
-              `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
-            );
+          if (file.size > 0) {
+            const uploadedUrl = await uploadImageToCloudinary(file);
+            if (uploadedUrl) {
+              urls.push(
+                `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
+              );
+            }
           }
         }
       }
@@ -358,11 +363,13 @@ const Contacto = () => {
             removeFile={removeFile}
             error={errors.archivos}
           />
-          <ReCAPTCHA
-            sitekey="6LcHOugqAAAAAIsjUdNwaZWA_kxiONdT540jmxba"
-            onChange={(value) => setCaptchaValido(value)}
-            ref={recaptchaRef}
-          />
+          {
+            <ReCAPTCHA
+              sitekey="6LcHOugqAAAAAIsjUdNwaZWA_kxiONdT540jmxba"
+              onChange={(value) => setCaptchaValido(value)}
+              ref={recaptchaRef}
+            />
+          }
 
           {isSending ? (
             <p className="text-green-500 text-center mt-4">

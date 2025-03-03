@@ -74,6 +74,7 @@ const TrabajaConNos = () => {
       for (const file of files) {
         if (file.size > 10 * 1024 * 1024) {
           alert(`El archivo ${file.name} es demasiado grande. Máximo 10MB.`);
+          setIsSending(false);
           return;
         }
         if (file.type == "application/x-zip-compressed") {
@@ -81,12 +82,14 @@ const TrabajaConNos = () => {
           const analysisId = await scanFileWithVirusTotal(file);
           if (!analysisId) {
             setMessage("No se pudo analizar el archivo");
+            setIsSending(false);
             return;
           }
           setMessage("buscando virus....");
           const report = await getAnalysisReport(analysisId);
           if (report.malicious > 0) {
             setMessage("Se detectaron virus en el archivo");
+            setIsSending(false);
             return;
           } else {
             setMessage("subiendo archivo");
@@ -98,11 +101,13 @@ const TrabajaConNos = () => {
             }
           }
         } else {
-          const uploadedUrl = await uploadImageToCloudinary(file);
-          if (uploadedUrl) {
-            urls.push(
-              `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
-            );
+          if (file.size > 0) {
+            const uploadedUrl = await uploadImageToCloudinary(file);
+            if (uploadedUrl) {
+              urls.push(
+                `<li><a href="${uploadedUrl}" target="_blank">${uploadedUrl}</a></li>`
+              );
+            }
           }
         }
       }

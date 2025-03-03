@@ -6,11 +6,14 @@ export const scanFileWithVirusTotal = async (file) => {
   formData.append("file", file);
 
   try {
-    const response = await fetch("https://www.virustotal.com/api/v3/files", {
-      method: "POST",
-      headers: { "x-apikey": VIRUSTOTAL_API_KEY },
-      body: formData,
-    });
+    const response = await fetch(
+      "https://ares-steel-frame-backend.onrender.com/scan",
+      {
+        method: "POST",
+        headers: { "x-apikey": VIRUSTOTAL_API_KEY },
+        body: formData,
+      }
+    );
 
     const data = await response.json();
     return data.data.id; // ID del análisis
@@ -23,7 +26,7 @@ export const scanFileWithVirusTotal = async (file) => {
 export const getAnalysisReport = async (analysisId) => {
   try {
     const response = await fetch(
-      `https://www.virustotal.com/api/v3/analyses/${analysisId}`,
+      `https://ares-steel-frame-backend.onrender.com/analysis/${analysisId}`,
       {
         method: "GET",
         headers: { "x-apikey": VIRUSTOTAL_API_KEY },
@@ -31,7 +34,8 @@ export const getAnalysisReport = async (analysisId) => {
     );
 
     const data = await response.json();
-    return data.data.attributes.stats; // Devuelve estadísticas del análisis
+    return data.data.attributes.stats;
+    // Devuelve estadísticas del análisis
   } catch (error) {
     console.error("Error al obtener reporte de VirusTotal:", error);
     return null;
