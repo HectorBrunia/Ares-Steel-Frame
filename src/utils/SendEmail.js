@@ -21,10 +21,10 @@ export const SendEmail = async (formData) => {
   // Enviamos solo los datos sin archivos adjuntos
   try {
     await emailjs.send(
-      "service_tve2nrj",
-      "template_m9hsmtd",
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       emailData,
-      "MbiAbGPFHhaTGc8nN"
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     );
     return "Correo enviado con éxito!"; // Ahora devuelve un mensaje
   } catch (error) {
@@ -55,10 +55,10 @@ export const sendEmailTrabajo = async (formData) => {
   // Enviamos solo los datos sin archivos adjuntos
   try {
     await emailjs.send(
-      "service_tve2nrj",
-      "template_ggirzir",
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_TRABAJO_ID,
       emailData,
-      "MbiAbGPFHhaTGc8nN"
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     );
     return "Correo enviado con éxito!"; // Ahora devuelve un mensaje
   } catch (error) {

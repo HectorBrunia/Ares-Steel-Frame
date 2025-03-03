@@ -2,7 +2,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { motion } from "framer-motion";
-const images = ["/img-hero.jpeg", "/img-hero2.jpeg", "/img-hero3.jpeg"];
+const images = [
+  "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990649/fux5zyq4rjqkpkanlhca.jpg",
+  "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990702/o7sf6h9khp1iodsz6neq.jpg",
+  "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990701/usns0jivuc6nmhcqzirx.jpg",
+];
 const Presentacion = () => {
   const [currentImage, setCurrentImage] = useState(0);
 

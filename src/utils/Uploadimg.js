@@ -1,5 +1,6 @@
 export const uploadImageToCloudinary = async (imageBase64) => {
-  const cloudName = "dtlrdlq98"; // Reemplaza con tu Cloud Name
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+  console.log(cloudName); // Reemplaza con tu Cloud Name
   const uploadPreset = "ml_default"; // Reemplaza con tu Upload Preset
 
   const formData = new FormData();

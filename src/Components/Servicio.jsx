@@ -5,37 +5,43 @@ const services = [
     title: "Construcción en seco",
     description:
       "Método innovador que reemplaza la albañilería tradicional con estructuras de acero galvanizado, logrando obras más rápidas, limpias y eficientes.",
-    image: "/construccion-seco.jpeg",
+    image:
+      "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990686/h3hk3ccgn9er8rj12s3j.jpg",
   },
   {
     title: "Llave en mano",
     description:
       "Nos encargamos de todo el proceso, desde el diseño hasta la entrega final, asegurando calidad y cumplimiento de plazos.",
-    image: "/llave-en-mano.jpeg",
+    image:
+      "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990707/nfym5mpdkou8tbsqgort.jpg",
   },
   {
     title: "Ampliaciones",
     description:
       "Expansión de viviendas y espacios comerciales con sistemas livianos y resistentes, sin demoliciones innecesarias y con mínima interrupción.",
-    image: "/ampliaciones.jpeg",
+    image:
+      "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990643/tv4y121vvnt0kb8wkbay.jpg",
   },
   {
     title: "Cielorrasos y tabiques en Drywall",
     description:
       "Solución versátil y moderna para interiores, con excelente aislamiento térmico y acústico.",
-    image: "/drywall.jpeg",
+    image:
+      "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990643/zkpehdzmbfq3gestvpxy.jpg",
   },
   {
     title: "Cielorrasos en PVC",
     description:
       "Opción estética y de bajo mantenimiento, ideal para ambientes húmedos y de alto tránsito.",
-    image: "/cielorrasos-pvc.jpeg",
+    image:
+      "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990642/rrnurpq9vw4bucn361yc.jpg",
   },
   {
     title: "Decks",
     description:
       "Espacios exteriores resistentes y duraderos, perfectos para jardines, galerías y áreas recreativas.",
-    image: "/decks.jpeg",
+    image:
+      "https://res.cloudinary.com/dquci1gzf/image/upload/v1740990645/qajipsebefhryzuqybyq.jpg",
   },
 ];
 
@@ -49,7 +55,7 @@ const Servicios = () => {
         <div
           className="h-[150vh] absolute -z-10 w-full top-[-320px] bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(/fonde-servicos.jpeg)`,
+            backgroundImage: `url(https://res.cloudinary.com/dquci1gzf/image/upload/v1740990649/fux5zyq4rjqkpkanlhca.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

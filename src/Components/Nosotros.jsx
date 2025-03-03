@@ -10,28 +10,33 @@ const videos = [
     title: "Eficiencia",
     description:
       "Optimizamos tiempos de construcción con materiales innovadores.",
-    video: "/ejemplo-vid.mp4",
+    video:
+      "https://res.cloudinary.com/dquci1gzf/video/upload/v1740990681/mlsfl3rxi5ljrivi9elv.mp4",
   },
   {
     title: "Calidad garantizada",
     description: "Cumplimos con los más altos estándares constructivos.",
-    video: "/ejemplo-vid2.mp4",
+    video:
+      "https://res.cloudinary.com/dquci1gzf/video/upload/v1740990657/swoguez0rcfrz1pecnb7.mp4",
   },
   {
     title: "Experiencia",
     description:
       "Contamos con un equipo técnico especializado y amplia trayectoria.",
-    video: "/ejemplo-vid4.mp4",
+    video:
+      "https://res.cloudinary.com/dquci1gzf/video/upload/v1740990663/hfy8wmmqpljzvhkrpkqr.mp4",
   },
   {
     title: "Sostenibilidad",
     description: "Construcciones más livianas y energéticamente eficientes.",
-    video: "/ejemplo-vid5.mp4",
+    video:
+      "https://res.cloudinary.com/dquci1gzf/video/upload/v1740990696/i3fj6viva2g5qkxzlpoq.mp4",
   },
   {
     title: "Cobertura nacional",
     description: "Trabajamos en Tandil y en cualquier ciudad de Argentina.",
-    video: "/ejemplo-vid3-2.mp4",
+    video:
+      "https://res.cloudinary.com/dquci1gzf/video/upload/v1740990699/vbaqwpqv33ifpkfybtap.mp4",
   },
 ];
 

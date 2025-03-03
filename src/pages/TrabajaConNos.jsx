@@ -12,7 +12,7 @@ import MessageModal from "../Components/MessageModal";
 import FileUpload from "../Components/FileUpload";
 import InputField from "../Components/InputField";
 import SelectField from "../Components/SelectField";
-import ReCAPTCHA from "react-google-recaptcha";
+/* import ReCAPTCHA from "react-google-recaptcha"; */
 
 const TrabajaConNos = () => {
   const [filePreviews, setFilePreviews] = useState([]);
@@ -34,8 +34,8 @@ const TrabajaConNos = () => {
     setFilePreviews(newFiles);
   };
 
-  const [captchaValido, setCaptchaValido] = useState(null);
-  const recaptchaRef = useRef(null);
+  /*  const [captchaValido, setCaptchaValido] = useState(null);
+  const recaptchaRef = useRef(null); */
 
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState(null);
@@ -51,10 +51,10 @@ const TrabajaConNos = () => {
   });
 
   const onSubmit = async (data, e) => {
-    if (!captchaValido) {
+    /* if (!captchaValido) {
       alert("Por favor, completa el reCAPTCHA.");
       return;
-    }
+    } */
     e.preventDefault();
     setIsSending(true);
     const formData = new FormData(formRef.current);
@@ -323,11 +323,11 @@ const TrabajaConNos = () => {
             removeFile={removeFile}
             error={errors.archivos}
           />
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             sitekey="6Lf5zOUqAAAAADxQ5kw7-OBGijF65MTT0Vv7CuNE"
             onChange={(value) => setCaptchaValido(value)}
             ref={recaptchaRef}
-          />
+          /> */}
 
           {isSending ? (
             <p className="text-green-500 text-center mt-4">
