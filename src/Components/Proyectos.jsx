@@ -213,6 +213,7 @@ const Proyectos = () => {
                 <AdvancedImage
                   cldImg={cloudinaryMedia}
                   className="w-full h-full object-cover"
+                  attributes={{ alt: `imagen galeria n ${index}` }}
                 />
               ) : (
                 <AdvancedVideo
@@ -251,6 +252,7 @@ const Proyectos = () => {
             {media[selectedIndex].type === "image" ? (
               <AdvancedImage
                 cldImg={cld.image(media[selectedIndex].id)}
+                attributes={{ alt: "imagen seleccionada" }}
                 className="max-w-3xl max-h-[80vh] rounded-lg"
                 loading="lazy"
               />
