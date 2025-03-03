@@ -99,9 +99,10 @@ const NavBar = () => {
           <a
             target="_blank"
             href="https://www.instagram.com/ares.steelframe?igsh=ZG1mODRrNGdqeHNs"
-            className="flex"
+            className="flex flex-col justify-center items-center"
           >
             <ImInstagram size={40} />
+            instagram
           </a>
         </div>
       </nav>
