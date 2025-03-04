@@ -16,7 +16,7 @@ const Home = () => {
         <meta name="author" content="Ares Steel Frame" />
         <meta
           name="keywords"
-          content="steel frame, construcci\\xF3n, casas de acero, construcci\\xF3n moderna"
+          content="steel frame, construcciones, casas de acero, construcciones moderna, steel frame Argentina"
         />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:site_name" content="Ares Steel Frame" />
