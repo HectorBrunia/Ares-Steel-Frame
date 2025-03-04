@@ -222,7 +222,6 @@ const Contacto = () => {
                 country={"ar"}
                 value={phone}
                 onChange={setPhone}
-                name="telefono"
                 containerStyle={{ width: "100%" }}
                 inputStyle={{ width: "100%", border: "1px solid" }}
                 fullWidth={true}
@@ -382,13 +381,12 @@ const Contacto = () => {
             removeFile={removeFile}
             error={errors.archivos}
           />
-          {
-            <ReCAPTCHA
-              sitekey="6LcHOugqAAAAAIsjUdNwaZWA_kxiONdT540jmxba"
-              onChange={(value) => setCaptchaValido(value)}
-              ref={recaptchaRef}
-            />
-          }
+
+          <ReCAPTCHA
+            sitekey="6LcHOugqAAAAAIsjUdNwaZWA_kxiONdT540jmxba"
+            onChange={(value) => setCaptchaValido(value)}
+            ref={recaptchaRef}
+          />
 
           {isSending ? (
             <p className="text-green-500 text-center mt-4">
