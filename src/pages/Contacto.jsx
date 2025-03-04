@@ -222,6 +222,7 @@ const Contacto = () => {
                 country={"ar"}
                 value={phone}
                 onChange={setPhone}
+                name="telefono"
                 containerStyle={{ width: "100%" }}
                 inputStyle={{ width: "100%", border: "1px solid" }}
                 fullWidth={true}
@@ -248,6 +249,7 @@ const Contacto = () => {
               <Select
                 value={ciudad}
                 onChange={setCiudad}
+                name="ciudad"
                 options={Ciudades}
                 placeholder="Selecciona una ciudad"
                 isSearchable

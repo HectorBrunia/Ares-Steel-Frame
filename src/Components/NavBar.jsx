@@ -10,7 +10,6 @@ const links = [
   { to: "servicios", text: "Nuestros Servicios" },
   { to: "Sistemas Constructivos", text: "Sistemas Constructivos" },
   { to: "proyectos", text: "Nuestros Proyectos" },
-  { to: "contacto", text: "Contáctanos" },
 ];
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +24,7 @@ const NavBar = () => {
           <NavLink to="/" className="cursor-pointer">
             <img
               className="w-20 h-20 ml-8 rounded-full"
-              src="/logo.jpeg"
+              src="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
               alt="Logo"
             />
           </NavLink>
@@ -107,8 +106,12 @@ const NavBar = () => {
         </div>
       </nav>
       <nav className="bg-red-600 fixed z-50 w-full lg:hidden text-white flex justify-between items-center px-6 py-4">
-        <NavLink to="/" className="cursor-pointer">
-          <img className="w-20 h-20 rounded-full" src="/logo.jpeg" alt="Logo" />
+        <NavLink to="/" className="cursor-pointer z-20">
+          <img
+            className="w-20  h-20 rounded-full"
+            src="https://res.cloudinary.com/dquci1gzf/image/upload/v1740990703/yxagaxbyhmadpibqxkgl.jpg"
+            alt="Logo"
+          />
         </NavLink>
 
         {/* Botón hamburguesa */}
@@ -162,7 +165,7 @@ const NavBar = () => {
               }}
               to="/contactanos"
               className={({ isActive }) =>
-                ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+                ` p-2 px-8 mx-auto text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
               }
             >
               Contáctanos
@@ -174,7 +177,7 @@ const NavBar = () => {
               }}
               to="/trabajaconnos"
               className={({ isActive }) =>
-                ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+                ` p-2 mx-auto px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
               }
             >
               Trabaja con nosotros
