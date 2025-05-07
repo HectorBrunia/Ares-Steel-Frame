@@ -8,6 +8,8 @@ import SestemasConstructivos from "../Components/SistemasConstructivos";
 
 import "leaflet/dist/leaflet.css";
 import { Helmet } from "react-helmet-async";
+import InstagramFeed from "../Components/InstagramFedd";
+import FacebookFedd from "../Components/FacebookFedd";
 const Home = () => {
   return (
     <>
@@ -64,6 +66,8 @@ const Home = () => {
 
         <SestemasConstructivos />
         <Proyectos />
+        <InstagramFeed />
+        {/* <FacebookFedd /> */}
         <section id="contacto">
           <Contacto />
         </section>
