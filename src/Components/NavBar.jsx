@@ -83,7 +83,14 @@ const NavBar = () => {
           >
             Contáctanos
           </NavLink>
-
+          <NavLink
+            to="/viviendas"
+            className={({ isActive }) =>
+              ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+            }
+          >
+            Viviendas
+          </NavLink>
           <NavLink
             to="/trabajaconnos"
             className={({ isActive }) =>
@@ -170,7 +177,14 @@ const NavBar = () => {
             >
               Contáctanos
             </NavLink>
-
+            <NavLink
+            to="/viviendas"
+            className={({ isActive }) =>
+              ` p-2 px-8 text-xl ${isActive ? "font-bold cursor-pointer text-lg border-b-4" : " "}`
+            }
+            >
+              Viviendas
+            </NavLink>
             <NavLink
               onClick={() => {
                 setIsDropdownOpen(false), setIsOpen(false);
