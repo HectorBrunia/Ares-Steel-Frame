@@ -2,7 +2,11 @@ export const casas = [
     {
       id: 1,
       nombre: "Modelo Ampliable ARES",
-      imagen: "/public/img/modelo_ampliable_2.png",
+      imagen: "/src/img/modelo_ampliable_2.png",
+      imagenes: [
+        "/src/img/modelo_ampliable_2.png",
+        "/src/img/modelo_ampliable.png"
+      ],
       descripcion: "Vivienda modular ampliable en etapas, diseñada en Steel Framing, pensada para crecer según las necesidades del cliente.",
       caracteristicas: [
         { label: "Tipo", valor: "Modular" },
@@ -18,15 +22,18 @@ export const casas = [
         "Amigable con el medio ambiente"
       ],
       planos: [
-        "/public/img/plano_ampliable_1.png",
-        "/public/img/plano_ampliable_2.png",
-        "/public/img/plano_ampliable_3.png"
+        "/src/img/plano_ampliable_1.png",
+        "/src/img/plano_ampliable_2.png",
+        "/src/img/plano_ampliable_3.png"
       ]
     },
     {
       id: 2,
       nombre: "MODELO ECO 26 ARES",
-      imagen: "/public/img/modelo_eco.png",
+      imagen: "/src/img/modelo_eco.png",
+      imagenes: [
+        "/src/img/modelo_eco.png"
+      ],
       descripcion: "Solución compacta y funcional para viviendas contemporáneas con Steel Framing.",
       caracteristicas: [
         { label: "Tecnología", valor: "Steel Framing" },
@@ -49,7 +56,10 @@ export const casas = [
     {
       id: 3,
       nombre: "MODELO QUINCHO ARES",
-      imagen: "/public/img/modelo_quincho.png",
+      imagen: "/src/img/modelo_quincho.png",
+      imagenes: [
+        "/src/img/modelo_quincho.png"
+      ],
       descripcion: "Vivienda de lujo con todas las prestaciones en Steel Framing.",
       caracteristicas: [
         { label: "Area", valor: "38 m2" },
@@ -69,7 +79,10 @@ export const casas = [
     {
       id: 4,
       nombre: "MODELO BREZZO ARES",
-      imagen: "/public/img/modelo_brezzo.png",
+      imagen: "/src/img/modelo_brezzo.png",
+      imagenes: [
+        "/src/img/modelo_brezzo.png"
+      ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
         { label: "Tipo", valor: "Familiar" },
@@ -87,7 +100,10 @@ export const casas = [
     },{
       id: 5,
       nombre: "MODELO BUNDERS ARES",
-      imagen: "/public/img/modelo_bunders.png",
+      imagen: "/src/img/modelo_bunders.png",
+      imagenes: [
+        "/src/img/modelo_bunders.png"
+      ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
         { label: "Tipo", valor: "Familiar" },
@@ -105,25 +121,32 @@ export const casas = [
     },{
       id: 6,
       nombre: "MODELO Nr 50 - LOFT ARES",
-      imagen: "/public/img/modelo_nr50.png",
+      imagen: "/src/img/modelo_nr50.png",
+      imagenes: [
+        "/src/img/modelo_nr50.png"
+      ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
         { label: "Tipo", valor: "Familiar" },
-        { label: "Ampliable", valor: "Sí" },
-        { label: "Tecnología", valor: "Steel Framing" },
-        { label: "Espacios", valor: "Amplios" }
+        { label: "", valor: "Estar - Cocina - Comedor integrado" },
+        { label: "", valor: "Baño completo" },
+        { label: "", valor: "Dormitorio superior" },
+        { label: "", valor: "Deck exterior" },
       ],
       detalles: [
-        "Múltiples dormitorios",
-        "Áreas comunes espaciosas",
-        "Seguridad reforzada",
-        "Zonas de recreación",
-        "Excelente ventilación"
-      ]
+        "Diseño flexible y adaptable",
+        "Construcción rápida y eficiente",
+        "Bajo costo de mantenimiento",
+        "Excelente aislamiento térmico",
+        "Amigable con el medio ambiente"
+      ],
     },{
       id: 7,
       nombre: "MODELO ECO 29 ARES",
-      imagen: "/public/img/modelo_eco29.png",
+      imagen: "/src/img/modelo_eco29.png",
+      imagenes: [
+        "/src/img/modelo_eco29.png"
+      ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
         { label: "Area", valor: "Desde 51 m2" },
@@ -143,7 +166,10 @@ export const casas = [
     {
       id: 8,
       nombre: "MODELO DUPLEX ARES",
-      imagen: "/public/img/modelo_duplex.png",
+      imagen: "/src/img/modelo_duplex.png",
+      imagenes: [
+        "/src/img/modelo_duplex.png"
+      ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
         { label: "Area", valor: "24 m2" },

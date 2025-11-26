@@ -4,6 +4,68 @@ import PropTypes from 'prop-types';
 import { casas } from '../utils/Casas.js';
 
 
+const ImageGallery = ({ imagenes }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (!imagenes || imagenes.length === 0) return null;
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? imagenes.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === imagenes.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="relative w-full mb-6">
+      <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
+        <img
+          src={imagenes[currentIndex]}
+          alt={`Imagen ${currentIndex + 1}`}
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      {imagenes.length > 1 && (
+        <>
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+            type="button"
+          >
+            &#10094;
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+            type="button"
+          >
+            &#10095;
+          </button>
+
+          <div className="flex justify-center gap-2 mt-4">
+            {imagenes.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  idx === currentIndex ? 'bg-red-600 w-8' : 'bg-gray-400'
+                }`}
+                type="button"
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+ImageGallery.propTypes = {
+  imagenes: PropTypes.array.isRequired,
+};
+
 const CasaModal = ({ casa, onClose }) => {
   if (!casa) return null;
 
@@ -11,7 +73,7 @@ const CasaModal = ({ casa, onClose }) => {
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-brightness-75 z-50 p-4">
       <div className="bg-white text-black p-8 rounded-lg shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto animate-fade-in">
         <div className="mb-6">
-          <img src={casa.imagen} alt={casa.nombre} className="w-full h-full object-contain rounded-lg mb-4" />
+          <ImageGallery imagenes={casa.imagenes || [casa.imagen]} />
           <h2 className="text-3xl font-bold text-red-600 mb-4">{casa.nombre}</h2>
           <p className="text-gray-700 text-lg mb-4">{casa.descripcion}</p>
         </div>
@@ -38,9 +100,7 @@ const CasaModal = ({ casa, onClose }) => {
         
         <div>
             <h3 className="text-xl font-bold text-gray-800 mb-3">Planos de la casa</h3>
-            {casa.planos && casa.planos.map((plano, idx) => (
-                <img key={idx} src={plano} alt={`Plano ${idx + 1}`} className="w-full h-full object-contain rounded-lg mb-4" />
-            ))}
+            <ImageGallery imagenes={casa.planos} />
         </div>
 
         <div className="flex gap-4">
@@ -68,6 +128,7 @@ CasaModal.propTypes = {
     id: PropTypes.number,
     nombre: PropTypes.string,
     imagen: PropTypes.string,
+    imagenes: PropTypes.array,
     descripcion: PropTypes.string,
     caracteristicas: PropTypes.array,
     detalles: PropTypes.array,
