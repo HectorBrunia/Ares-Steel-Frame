@@ -4,8 +4,12 @@ export const casas = [
       nombre: "Modelo Ampliable ARES",
       imagen: "/src/img/modelo_ampliable_2.png",
       imagenes: [
+        "/src/img/modelo_ampliable_7.png",
+        "/src/img/modelo_ampliable_6.png",
+        "/src/img/modelo_ampliable_5.png",
+        "/src/img/modelo_ampliable_4.png",
+        "/src/img/modelo_ampliable_3.png",
         "/src/img/modelo_ampliable_2.png",
-        "/src/img/modelo_ampliable.png"
       ],
       descripcion: "Vivienda modular ampliable en etapas, diseñada en Steel Framing, pensada para crecer según las necesidades del cliente.",
       caracteristicas: [
@@ -24,7 +28,9 @@ export const casas = [
       planos: [
         "/src/img/plano_ampliable_1.png",
         "/src/img/plano_ampliable_2.png",
-        "/src/img/plano_ampliable_3.png"
+        "/src/img/plano_ampliable_3.png",
+        "/src/img/plano_ampliable_4.png",
+        "/src/img/plano_ampliable_5.png",
       ]
     },
     {
@@ -32,7 +38,12 @@ export const casas = [
       nombre: "MODELO ECO 26 ARES",
       imagen: "/src/img/modelo_eco.png",
       imagenes: [
-        "/src/img/modelo_eco.png"
+        "/src/img/modelo_eco.png",
+        "/src/img/modelo_eco_2.png",
+        "/src/img/modelo_eco_5.png",
+        "/src/img/modelo_eco_6.png",
+        "/src/img/modelo_eco_3.png",
+        "/src/img/modelo_eco_4.png"
       ],
       descripcion: "Solución compacta y funcional para viviendas contemporáneas con Steel Framing.",
       caracteristicas: [
@@ -51,6 +62,9 @@ export const casas = [
         "Arquitectura pasiva - bajo consumo energético",
         "Alta aislacion en muros y aventanamiento.",
         "Confort higroterminco en interiores"
+      ],
+      planos: [
+        "/src/img/plano_eco.png",
       ]
     },
     {
@@ -58,7 +72,12 @@ export const casas = [
       nombre: "MODELO QUINCHO ARES",
       imagen: "/src/img/modelo_quincho.png",
       imagenes: [
-        "/src/img/modelo_quincho.png"
+        "/src/img/modelo_quincho.png",
+        "/src/img/modelo_quincho_2.png",
+        "/src/img/modelo_quincho_3.png",
+        "/src/img/modelo_quincho_4.png",
+        "/src/img/modelo_quincho_5.png",
+        "/src/img/modelo_quincho_6.png"
       ],
       descripcion: "Vivienda de lujo con todas las prestaciones en Steel Framing.",
       caracteristicas: [
@@ -74,6 +93,9 @@ export const casas = [
         "Sistemas de confort avanzados",
         "Certificación energética A",
         "Garantía extendida"
+      ],
+      planos: [
+        "/src/img/plano_quincho.png",
       ]
     },
     {
@@ -81,7 +103,10 @@ export const casas = [
       nombre: "MODELO BREZZO ARES",
       imagen: "/src/img/modelo_brezzo.png",
       imagenes: [
-        "/src/img/modelo_brezzo.png"
+        "/src/img/modelo_brezzo.png",
+        "/src/img/modelo_brezzo_2.png",
+        "/src/img/modelo_brezzo_3.png",
+        
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -96,13 +121,19 @@ export const casas = [
         "Patio verde con pileta: Un espacio ideal para disfrutar del sol, la naturaleza y la compañía de seres queridos.",
         "Zonas de recreación",
         "Estilo simple y bello: Una arquitectura que combina la simplicidad con la elegancia, creando un ambiente acogedor y relajante."
+      ],
+      planos: [
+        "/src/img/plano_brezzo.png",
       ]
     },{
       id: 5,
       nombre: "MODELO BUNDERS ARES",
       imagen: "/src/img/modelo_bunders.png",
       imagenes: [
-        "/src/img/modelo_bunders.png"
+        "/src/img/modelo_bunders.png",
+        "/src/img/modelo_bunders_2.png",
+        "/src/img/modelo_bunders_3.png",
+        "/src/img/modelo_bunders_4.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -117,13 +148,23 @@ export const casas = [
         "Seguridad reforzada",
         "Zonas de recreación",
         "Excelente ventilación"
+      ],
+      planos: [
+        "/src/img/plano_bunders_1.png",
+        "/src/img/plano_bunders_2.png",
+        "/src/img/plano_bunders_3.png",
+        "/src/img/plano_bunders_4.png",
       ]
     },{
       id: 6,
       nombre: "MODELO Nr 50 - LOFT ARES",
       imagen: "/src/img/modelo_nr50.png",
       imagenes: [
-        "/src/img/modelo_nr50.png"
+        "/src/img/modelo_nr50.png",
+        "/src/img/modelo_nr50_2.png",
+        "/src/img/modelo_nr50_3.png",
+        "/src/img/modelo_nr50_4.png",
+        "/src/img/modelo_nr50_5.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -140,12 +181,19 @@ export const casas = [
         "Excelente aislamiento térmico",
         "Amigable con el medio ambiente"
       ],
+      planos: [
+        "/src/img/plano_nr50.png",
+        "/src/img/plano_nr50_2.png",
+      ]
     },{
       id: 7,
       nombre: "MODELO ECO 29 ARES",
       imagen: "/src/img/modelo_eco29.png",
       imagenes: [
-        "/src/img/modelo_eco29.png"
+        "/src/img/modelo_eco29.png",
+        "/src/img/modelo_eco29_2.png",
+        "/src/img/modelo_eco29_3.png",
+        "/src/img/modelo_eco29_4.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -161,14 +209,21 @@ export const casas = [
         "Seguridad reforzada",
         "Zonas de recreación",
         "Excelente ventilación"
-      ]
+      ],
+      planos: [
+        "/src/img/plano_eco29_1.png",
+        "/src/img/plano_eco29_2.png",
+        "/src/img/plano_eco29_3.png",
+      ],
     },
     {
       id: 8,
       nombre: "MODELO DUPLEX ARES",
       imagen: "/src/img/modelo_duplex.png",
       imagenes: [
-        "/src/img/modelo_duplex.png"
+        "/src/img/modelo_duplex.png",
+        "/src/img/modelo_duplex_2.png",
+        "/src/img/modelo_duplex_3.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -184,6 +239,10 @@ export const casas = [
         "Estructura de acero galvanizado con 300 años de vida util",
         "Alta aislacion en muros y aventanamiento.",
         "Confort higroterminco en interiores"
+      ],
+      planos: [
+        "/src/img/plano_duplex_1.png",
+        "/src/img/plano_duplex_2.png",
       ]
     }
   ];

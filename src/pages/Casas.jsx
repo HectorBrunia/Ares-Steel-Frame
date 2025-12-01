@@ -19,7 +19,7 @@ const ImageGallery = ({ imagenes }) => {
 
   return (
     <div className="relative w-full mb-6">
-      <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
+      <div className="relative w-full h-96  rounded-lg overflow-hidden flex items-center justify-center">
         <img
           src={imagenes[currentIndex]}
           alt={`Imagen ${currentIndex + 1}`}
