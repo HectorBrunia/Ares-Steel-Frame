@@ -11,7 +11,7 @@ export const casas = [
         "/public/img/modelo_ampliable_3.png",
         "/public/img/modelo_ampliable_2.png",
       ],
-      descripcion: "Vivienda modular ampliable en etapas, diseñada en Steel Framing, pensada para crecer según las necesidades del cliente.",
+      descripcion: "Vivienda modular ampliable en etapas, pensada para crecer según las necesidades del cliente.",
       caracteristicas: [
         { label: "Tipo", valor: "Modular" },
         { label: "Ampliable", valor: "Hasta 3 dormitorios" },
