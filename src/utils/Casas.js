@@ -2,14 +2,14 @@ export const casas = [
     {
       id: 1,
       nombre: "Modelo Ampliable ARES",
-      imagen: "/img/modelo_ampliable_2.png",
+      imagen: "img/modelo_ampliable_2.png",
       imagenes: [
-        "/img/modelo_ampliable_7.png",
-        "/img/modelo_ampliable_6.png",
-        "/img/modelo_ampliable_5.png",
-        "/img/modelo_ampliable_4.png",
-        "/img/modelo_ampliable_3.png",
-        "/img/modelo_ampliable_2.png",
+        "img/modelo_ampliable_7.png",
+        "img/modelo_ampliable_6.png",
+        "img/modelo_ampliable_5.png",
+        "img/modelo_ampliable_4.png",
+        "img/modelo_ampliable_3.png",
+        "img/modelo_ampliable_2.png",
       ],
       descripcion: "Vivienda modular ampliable en etapas, pensada para crecer según las necesidades del cliente.",
       caracteristicas: [
@@ -26,24 +26,24 @@ export const casas = [
         "Amigable con el medio ambiente"
       ],
       planos: [
-        "/img/plano_ampliable_1.png",
-        "/img/plano_ampliable_2.png",
-        "/img/plano_ampliable_3.png",
-        "/img/plano_ampliable_4.png",
-        "/img/plano_ampliable_5.png",
+        "img/plano_ampliable_1.png",
+        "img/plano_ampliable_2.png",
+        "img/plano_ampliable_3.png",
+        "img/plano_ampliable_4.png",
+        "img/plano_ampliable_5.png",
       ]
     },
     {
       id: 2,
       nombre: "MODELO ECO 26 ARES",
-      imagen: "/img/modelo_eco.png",
+      imagen: "img/modelo_eco.png",
       imagenes: [
-        "/img/modelo_eco.png",
-        "/img/modelo_eco_2.png",
-        "/img/modelo_eco_5.png",
-        "/img/modelo_eco_6.png",
-        "/img/modelo_eco_3.png",
-        "/img/modelo_eco_4.png"
+        "img/modelo_eco.png",
+        "img/modelo_eco_2.png",
+        "img/modelo_eco_5.png",
+        "img/modelo_eco_6.png",
+        "img/modelo_eco_3.png",
+        "img/modelo_eco_4.png"
       ],
       descripcion: "Solución compacta y funcional para viviendas contemporáneas con Steel Framing.",
       caracteristicas: [
@@ -64,20 +64,20 @@ export const casas = [
         "Confort higroterminco en interiores"
       ],
       planos: [
-        "/img/plano_eco.png",
+        "img/plano_eco.png",
       ]
     },
     {
       id: 3,
       nombre: "MODELO QUINCHO ARES",
-      imagen: "/img/modelo_quincho.png",
+      imagen: "img/modelo_quincho.png",
       imagenes: [
-        "/img/modelo_quincho.png",
-        "/img/modelo_quincho_2.png",
-        "/img/modelo_quincho_3.png",
-        "/img/modelo_quincho_4.png",
-        "/img/modelo_quincho_5.png",
-        "/img/modelo_quincho_6.png"
+        "img/modelo_quincho.png",
+        "img/modelo_quincho_2.png",
+        "img/modelo_quincho_3.png",
+        "img/modelo_quincho_4.png",
+        "img/modelo_quincho_5.png",
+        "img/modelo_quincho_6.png"
       ],
       descripcion: "Vivienda de lujo con todas las prestaciones en Steel Framing.",
       caracteristicas: [
@@ -95,17 +95,17 @@ export const casas = [
         "Garantía extendida"
       ],
       planos: [
-        "/img/plano_quincho.png",
+        "img/plano_quincho.png",
       ]
     },
     {
       id: 4,
       nombre: "MODELO BREZZO ARES",
-      imagen: "/img/modelo_brezzo.png",
+      imagen: "img/modelo_brezzo.png",
       imagenes: [
-        "/img/modelo_brezzo.png",
-        "/img/modelo_brezzo_2.png",
-        "/img/modelo_brezzo_3.png",
+        "img/modelo_brezzo.png",
+        "img/modelo_brezzo_2.png",
+        "img/modelo_brezzo_3.png",
         
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
@@ -123,17 +123,17 @@ export const casas = [
         "Estilo simple y bello: Una arquitectura que combina la simplicidad con la elegancia, creando un ambiente acogedor y relajante."
       ],
       planos: [
-        "/img/plano_brezzo.png",
+        "img/plano_brezzo.png",
       ]
     },{
       id: 5,
       nombre: "MODELO BUNDERS ARES",
-      imagen: "/img/modelo_bunders.png",
+      imagen: "img/modelo_bunders.png",
       imagenes: [
-        "/img/modelo_bunders.png",
-        "/img/modelo_bunders_2.png",
-        "/img/modelo_bunders_3.png",
-        "/img/modelo_bunders_4.png",
+        "img/modelo_bunders.png",
+        "img/modelo_bunders_2.png",
+        "img/modelo_bunders_3.png",
+        "img/modelo_bunders_4.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -150,21 +150,21 @@ export const casas = [
         "Excelente ventilación"
       ],
       planos: [
-        "/img/plano_bunders_1.png",
-        "/img/plano_bunders_2.png",
-        "/img/plano_bunders_3.png",
-        "/img/plano_bunders_4.png",
+        "img/plano_bunders_1.png",
+        "img/plano_bunders_2.png",
+        "img/plano_bunders_3.png",
+        "img/plano_bunders_4.png",
       ]
     },{
       id: 6,
       nombre: "MODELO Nr 50 - LOFT ARES",
-      imagen: "/img/modelo_nr50.png",
+      imagen: "img/modelo_nr50.png",
       imagenes: [
-        "/img/modelo_nr50.png",
-        "/img/modelo_nr50_2.png",
-        "/img/modelo_nr50_3.png",
-        "/img/modelo_nr50_4.png",
-        "/img/modelo_nr50_5.png",
+        "img/modelo_nr50.png",
+        "img/modelo_nr50_2.png",
+        "img/modelo_nr50_3.png",
+        "img/modelo_nr50_4.png",
+        "img/modelo_nr50_5.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -182,18 +182,18 @@ export const casas = [
         "Amigable con el medio ambiente"
       ],
       planos: [
-        "/img/plano_nr50.png",
-        "/img/plano_nr50_2.png",
+        "img/plano_nr50.png",
+        "img/plano_nr50_2.png",
       ]
     },{
       id: 7,
       nombre: "MODELO ECO 29 ARES",
-      imagen: "/img/modelo_eco29.png",
+      imagen: "img/modelo_eco29.png",
       imagenes: [
-        "/img/modelo_eco29.png",
-        "/img/modelo_eco29_2.png",
-        "/img/modelo_eco29_3.png",
-        "/img/modelo_eco29_4.png",
+        "img/modelo_eco29.png",
+        "img/modelo_eco29_2.png",
+        "img/modelo_eco29_3.png",
+        "img/modelo_eco29_4.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -211,19 +211,19 @@ export const casas = [
         "Excelente ventilación"
       ],
       planos: [
-        "/img/plano_eco29_1.png",
-        "/img/plano_eco29_2.png",
-        "/img/plano_eco29_3.png",
+        "img/plano_eco29_1.png",
+        "img/plano_eco29_2.png",
+        "img/plano_eco29_3.png",
       ],
     },
     {
       id: 8,
       nombre: "MODELO DUPLEX ARES",
-      imagen: "/img/modelo_duplex.png",
+      imagen: "img/modelo_duplex.png",
       imagenes: [
-        "/img/modelo_duplex.png",
-        "/img/modelo_duplex_2.png",
-        "/img/modelo_duplex_3.png",
+        "img/modelo_duplex.png",
+        "img/modelo_duplex_2.png",
+        "img/modelo_duplex_3.png",
       ],
       descripcion: "Diseñado especialmente para familias, con espacios amplios y funcionales.",
       caracteristicas: [
@@ -241,8 +241,8 @@ export const casas = [
         "Confort higroterminco en interiores"
       ],
       planos: [
-        "/img/plano_duplex_1.png",
-        "/img/plano_duplex_2.png",
+        "img/plano_duplex_1.png",
+        "img/plano_duplex_2.png",
       ]
     }
   ];
